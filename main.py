@@ -5,8 +5,10 @@ content = f.read()
 items = content.split("\n") 
 items.pop()
 
-result.write('{\n')
+text = ('{\n')
 for i in items:
     j = i.split(',')
-    result.write('\t\"'+j[0]+'\": \"'+j[1]+'\",\n')
-result.write('}')
+    text += ('\t\"'+j[0]+'\": \"'+j[1]+'\",\n')
+text = text[:-2]
+text += '\n}'
+result.write(text)
